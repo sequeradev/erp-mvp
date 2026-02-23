@@ -79,7 +79,7 @@ Docker Compose
 
 📦 Instalación y ejecución local
 1️⃣ Clonar repositorio
-git clone https://github.com/TU_USUARIO/erp-mvp.git
+git clone [https://github.com/TU_USUARIO/erp-mvp.git]
 cd erp-mvp
 2️⃣ Instalar dependencias
 npm install
