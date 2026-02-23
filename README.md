@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ERP MVP — Sistema de Gestión Empresarial
 
-## Getting Started
+ERP moderno diseñado para pequeñas empresas que permite gestionar clientes, productos, inventario y ventas desde un panel centralizado.
 
-First, run the development server:
+Este proyecto está construido con una arquitectura escalable y tecnologías modernas, pensado como base para un ERP real.
 
-```bash
+🚀 Características actuales
+✅ Autenticación
+
+Sistema de login seguro
+
+Rutas protegidas
+
+Preparado para proveedores externos (Google, etc.)
+
+✅ Clientes
+
+Crear, editar y eliminar clientes
+
+Búsqueda por nombre y email
+
+Validación de datos
+
+✅ Productos
+
+Gestión completa de productos
+
+SKU único
+
+Precio y coste
+
+✅ Inventario
+
+Movimientos de stock (IN, OUT, ADJUSTMENT)
+
+Cálculo automático del stock actual
+
+Ajuste manual de inventario
+
+✅ Ventas (Sales Orders)
+
+Creación de pedidos con múltiples líneas
+
+Cálculo automático de totales e impuestos
+
+Confirmación de pedidos
+
+Descompte automático de stock
+
+Prevención de ventas sin stock
+
+🧱 Stack Tecnológico
+
+Frontend & Backend
+
+Next.js (App Router)
+
+TypeScript
+
+UI
+
+Tailwind CSS
+
+Base de datos
+
+PostgreSQL
+
+ORM
+
+Prisma
+
+Autenticación
+
+Auth.js (NextAuth)
+
+Infraestructura
+
+Docker Compose
+
+📦 Instalación y ejecución local
+1️⃣ Clonar repositorio
+git clone https://github.com/TU_USUARIO/erp-mvp.git
+cd erp-mvp
+2️⃣ Instalar dependencias
+npm install
+3️⃣ Configurar variables de entorno
+
+Copiar el archivo de ejemplo:
+
+cp .env.example .env
+
+Editar si es necesario.
+
+4️⃣ Levantar base de datos
+docker compose up -d
+5️⃣ Ejecutar migraciones
+npx prisma migrate dev
+6️⃣ (Opcional) cargar datos demo
+npx prisma db seed
+7️⃣ Iniciar el servidor
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir en el navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+🔑 Credenciales de prueba
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+(si usas seed)
 
-## Learn More
+email: admin@example.com
+password: admin123
+📁 Estructura del proyecto
+app/                → rutas y páginas
+components/         → componentes UI
+lib/                → utilidades, auth y db
+modules/            → lógica modular del ERP
+prisma/             → esquema y seeds
+types/              → tipos globales
+🧠 Flujo de inventario
 
-To learn more about Next.js, take a look at the following resources:
+El stock no se edita manualmente.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Se calcula mediante movimientos:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+IN → entrada de stock
 
-## Deploy on Vercel
+OUT → salida por ventas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ADJUSTMENT → ajuste manual
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Stock actual = IN − OUT ± ADJUSTMENTS
+
+🛣 Roadmap
+
+Próximas funcionalidades:
+
+Facturación PDF
+
+Compras y proveedores
+
+Panel financiero
+
+Multiempresa (multi-tenant)
+
+Roles y permisos avanzados
+
+Dashboard analítico
+
+API pública
+
+Deploy cloud
